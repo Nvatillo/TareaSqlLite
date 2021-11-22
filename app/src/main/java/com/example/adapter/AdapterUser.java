@@ -18,6 +18,7 @@ import com.example.objeto.User;
 import com.example.sqllite.OperacionesCRUD;
 import com.example.sqllite.esquemas.Usuario;
 import com.example.sqlliteejemplo.EditarUsuario;
+import com.example.sqlliteejemplo.ListaUsuarioAsignatura;
 import com.example.sqlliteejemplo.R;
 
 import java.util.ArrayList;
@@ -71,6 +72,8 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.UsuarioHolder>
                     Toast.makeText(view.getContext(), "Error eliminado usuario", Toast.LENGTH_SHORT).show();
                 }
             }
+
+
         });
 
         holder.editar.setId(item.getId_usuario());
@@ -90,6 +93,16 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.UsuarioHolder>
                 editarUsuario.putExtra("genero",item.getGenero().toString());
 
                 view.getContext().startActivity(editarUsuario);
+            }
+        });
+
+
+        holder.detalle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent userAsignaturas =new Intent(view.getContext(), ListaUsuarioAsignatura.class);
+                userAsignaturas.putExtra("id",item.getId_usuario());
+                view.getContext().startActivity(userAsignaturas);
             }
         });
     }

@@ -128,4 +128,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void agregarUsuario(View v){
+        Intent i = new Intent(this,agregarUsuarioC.class);
+        startActivity(i);
+    }
+
 }

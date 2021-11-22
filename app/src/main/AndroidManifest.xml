@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SqlLiteEjemplo">
         <activity
+            android:name=".ListaUsuarioAsignatura"
+            android:exported="true" />
+        <activity
             android:name=".agregarUsuarioC"
             android:exported="true" />
         <activity
